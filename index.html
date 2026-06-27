@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FirstStep Founder Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar" id="top">
+      <a class="brand" href="#top" aria-label="FirstStep home">
+        <span class="brand-mark">F1</span>
+        <span class="brand-text">FirstStep</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#roadmap">Roadmap</a>
+        <a href="#profile">Founder</a>
+        <a href="#investment">Investment</a>
+        <a href="#investors">Investors</a>
+        <a href="#agreement">Agreement</a>
+        <a href="#resources">Resources</a>
+      </nav>
+      <button class="ghost-button small" id="resetDemo">Reset demo</button>
+    </header>
+
+    <main>
+      <section class="hero hub-bg" aria-labelledby="heroTitle">
+        <div class="hero-content">
+          <p class="eyebrow">Challenge 1 - Taking the first entrepreneurial step</p>
+          <h1 id="heroTitle">Move from idea to first action safely.</h1>
+          <p class="hero-lead">A guided portal for first-time founders to understand business steps, estimate costs, prepare documents, request investment, connect with verified investors, and sign a secure agreement before sharing sensitive details.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#profile">I am a founder</a>
+            <a class="secondary-button" href="#investors">I want to invest</a>
+          </div>
+          <div class="hero-metrics" aria-label="Platform highlights">
+            <article><strong>32</strong><span>platform sections</span></article>
+            <article><strong>27</strong><span>journey stages</span></article>
+            <article><strong>3</strong><span>secure connection checks</span></article>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbit-card main">
+            <span class="status-dot"></span>
+            <h3>Founder dashboard</h3>
+            <p>Idea, license, funding, mentor, customer, launch.</p>
+          </div>
+          <div class="wireframe-box one"></div>
+          <div class="wireframe-box two"></div>
+          <div class="diamond one"></div>
+          <div class="diamond two"></div>
+          <div class="orbit-card mini card-a">Verified investor</div>
+          <div class="orbit-card mini card-b">Government agreement</div>
+        </div>
+      </section>
+
+      <section class="section light" id="sections">
+        <div class="section-heading">
+          <p class="eyebrow">Complete website map</p>
+          <h2>All sections included in the platform</h2>
+          <p>Search or scan the complete list of modules that turn a founder's idea into a first business action.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-label" for="sectionSearch">Search sections</label>
+          <input id="sectionSearch" type="search" placeholder="Search investment, license, mentor..." />
+        </div>
+        <div class="section-grid" id="sectionGrid"></div>
+      </section>
+
+      <section class="section split" id="profile">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Founder profile</p>
+          <h2>Start with the founder and the idea.</h2>
+          <p>This profile powers the roadmap, pitch builder, investor request, and agreement preview.</p>
+        </div>
+        <div class="panel">
+          <form class="grid-form" id="founderForm">
+            <label>Founder full name
+              <input name="founderName" type="text" placeholder="Example: Aisha Al Mansoori" />
+            </label>
+            <label>Business idea
+              <input name="idea" type="text" placeholder="Example: healthy home bakery for offices" />
+            </label>
+            <label>Business type
+              <select name="businessType" id="businessType">
+                <option>Food business</option>
+                <option>Retail business</option>
+                <option>Online business</option>
+                <option>Service business</option>
+                <option>Technology startup</option>
+                <option>Beauty business</option>
+                <option>Education business</option>
+                <option>Health and wellness business</option>
+                <option>Creative business</option>
+              </select>
+            </label>
+            <label>Current stage
+              <select name="stage">
+                <option>Idea stage</option>
+                <option>Prototype stage</option>
+                <option>Early sales stage</option>
+                <option>Growth stage</option>
+              </select>
+            </label>
+            <label>Location
+              <input name="location" type="text" placeholder="Example: Abu Dhabi" />
+            </label>
+            <label>Available founder budget
+              <input name="budget" type="number" min="0" placeholder="AED" />
+            </label>
+            <label class="full">Support needed
+              <textarea name="support" rows="4" placeholder="Mentor, customer access, legal support, investor, license guidance..."></textarea>
+            </label>
+          </form>
+          <div class="form-actions">
+            <button class="primary-button" id="saveProfile" type="button">Save profile</button>
+            <button class="secondary-button" id="useDemo" type="button">Use sample founder</button>
+          </div>
+          <div class="success-note" id="profileStatus" hidden>Profile saved and applied across the website.</div>
+        </div>
+      </section>
+
+      <section class="section two-col" id="readiness">
+        <div class="panel dark-panel">
+          <p class="eyebrow">Business readiness check</p>
+          <h2>Your readiness score</h2>
+          <div class="score-ring" id="readinessScore">0%</div>
+          <p id="readinessHint">Select the items you have completed to receive recommendations.</p>
+        </div>
+        <div class="panel">
+          <div class="checklist" id="readinessChecklist">
+            <label><input type="checkbox" data-score="clear idea" /> I can explain my idea clearly.</label>
+            <label><input type="checkbox" data-score="target customer" /> I know my target customer.</label>
+            <label><input type="checkbox" data-score="cost estimate" /> I have a basic cost estimate.</label>
+            <label><input type="checkbox" data-score="license" /> I checked possible licenses or permits.</label>
+            <label><input type="checkbox" data-score="investment" /> I know how much investment I need.</label>
+            <label><input type="checkbox" data-score="customer plan" /> I have a plan to find my first customer.</label>
+            <label><input type="checkbox" data-score="documents" /> I prepared a business summary or pitch deck.</label>
+            <label><input type="checkbox" data-score="advisor" /> I spoke with a mentor or expert.</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="roadmap">
+        <div class="section-heading">
+          <p class="eyebrow">Progress tracker</p>
+          <h2>Example founder journey stages</h2>
+          <p>Each stage can be checked off as the founder moves from idea to launch.</p>
+        </div>
+        <div class="progress-summary">
+          <div>
+            <strong id="stageCount">0 of 27</strong>
+            <span>stages completed</span>
+          </div>
+          <div class="progress-bar"><span id="progressBar"></span></div>
+        </div>
+        <div class="timeline" id="stageTimeline"></div>
+      </section>
+
+      <section class="section split" id="license-costs">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">License and cost estimator</p>
+          <h2>Understand requirements before starting.</h2>
+          <p>Select a business type to see a starter cost model and typical requirement checklist.</p>
+        </div>
+        <div class="panel estimator-panel">
+          <div class="inline-controls">
+            <label>Business category
+              <select id="costCategory"></select>
+            </label>
+            <label>Estimated monthly rent or workspace
+              <input id="workspaceCost" type="number" min="0" value="0" />
+            </label>
+          </div>
+          <div class="cost-output">
+            <div class="total-card">
+              <span>Estimated starting requirement</span>
+              <strong id="costTotal">AED 0</strong>
+              <p id="costNote">Select a category to see notes.</p>
+            </div>
+            <div class="cost-list" id="costList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section two-col" id="validation">
+        <div class="panel">
+          <p class="eyebrow">Idea validation</p>
+          <h2>Test demand before spending heavily.</h2>
+          <div class="grid-form compact">
+            <label>Who is your target customer?
+              <input id="customerInput" type="text" placeholder="Example: office employees in Abu Dhabi" />
+            </label>
+            <label>What problem do you solve?
+              <input id="problemInput" type="text" placeholder="Example: healthy snacks are hard to find at work" />
+            </label>
+            <label>What makes you different?
+              <input id="differenceInput" type="text" placeholder="Example: same-day delivery and low sugar recipes" />
+            </label>
+          </div>
+          <button class="primary-button" id="generateValidation">Generate validation plan</button>
+        </div>
+        <div class="panel output-panel">
+          <h3>Validation plan</h3>
+          <ol id="validationPlan" class="action-list"></ol>
+        </div>
+      </section>
+
+      <section class="section two-col" id="customers">
+        <div class="panel dark-panel">
+          <p class="eyebrow">First customer finder</p>
+          <h2>Find a pilot customer before searching for money.</h2>
+          <p>Choose the customer type and create a simple outreach message.</p>
+        </div>
+        <div class="panel">
+          <label>Customer type
+            <select id="customerType">
+              <option>Local buyer</option>
+              <option>Small business</option>
+              <option>Pilot customer</option>
+              <option>Early tester</option>
+              <option>Corporate partner</option>
+              <option>Government-backed pilot program</option>
+            </select>
+          </label>
+          <button class="secondary-button" id="createOutreach">Create outreach script</button>
+          <div class="message-preview" id="outreachScript"></div>
+        </div>
+      </section>
+
+      <section class="section light" id="mentors">
+        <div class="section-heading">
+          <p class="eyebrow">Mentor and expert matching</p>
+          <h2>Match the founder with relevant support.</h2>
+        </div>
+        <div class="card-grid three" id="mentorGrid"></div>
+      </section>
+
+      <section class="section split" id="pitch">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Pitch deck and business plan builder</p>
+          <h2>Create a first investor-ready summary.</h2>
+          <p>The builder uses the founder profile and investment details to create a simple one-page plan.</p>
+        </div>
+        <div class="panel">
+          <div class="grid-form compact">
+            <label>Pricing or revenue model
+              <input id="revenueModel" type="text" placeholder="Example: AED 12 per item plus delivery" />
+            </label>
+            <label>Main competitor
+              <input id="competitor" type="text" placeholder="Example: local bakeries and cafes" />
+            </label>
+            <label>Marketing channel
+              <input id="marketingChannel" type="text" placeholder="Example: Instagram and office tasting boxes" />
+            </label>
+          </div>
+          <button class="primary-button" id="buildPitch">Build summary</button>
+          <textarea id="pitchOutput" class="large-output" readonly placeholder="Your one-page business summary will appear here."></textarea>
+        </div>
+      </section>
+
+      <section class="section light" id="investment">
+        <div class="section-heading">
+          <p class="eyebrow">Investment requirement disclosure</p>
+          <h2>Explain how much investment is required and why.</h2>
+          <p>Founders can show the requested amount, purpose, timeline, support needed, and proposed offer to the investor.</p>
+        </div>
+        <div class="investment-layout">
+          <div class="panel">
+            <form class="grid-form compact" id="investmentForm">
+              <label>Total investment required
+                <input name="amount" type="number" min="0" placeholder="AED" />
+              </label>
+              <label>Investment purpose
+                <select name="purpose">
+                  <option>Launch the business</option>
+                  <option>Build prototype</option>
+                  <option>Buy equipment</option>
+                  <option>Marketing and first customers</option>
+                  <option>Licensing and approvals</option>
+                  <option>Hiring and operations</option>
+                  <option>Growth and expansion</option>
+                </select>
+              </label>
+              <label>Funding structure
+                <select name="structure">
+                  <option>Equity investment</option>
+                  <option>Partnership</option>
+                  <option>Profit-sharing</option>
+                  <option>Loan</option>
+                  <option>Grant</option>
+                  <option>Revenue-based financing</option>
+                </select>
+              </label>
+              <label>Use timeline
+                <select name="timeline">
+                  <option>0-3 months</option>
+                  <option>3-6 months</option>
+                  <option>6-12 months</option>
+                  <option>12+ months</option>
+                </select>
+              </label>
+              <label class="full">How will the money be used?
+                <textarea name="use" rows="4" placeholder="Break down licensing, product, marketing, equipment, hiring, technology, rent, operations..."></textarea>
+              </label>
+              <label class="full">Support needed besides money
+                <textarea name="nonMoneySupport" rows="3" placeholder="Mentorship, customer access, legal support, distribution, partnership introductions..."></textarea>
+              </label>
+            </form>
+          </div>
+          <div class="panel calculator-card">
+            <h3>Investment calculator</h3>
+            <label>Startup setup costs
+              <input id="calcStartup" type="number" min="0" value="25000" />
+            </label>
+            <label>Monthly operating cost
+              <input id="calcMonthly" type="number" min="0" value="8000" />
+            </label>
+            <label>Runway needed in months
+              <input id="calcRunway" type="number" min="1" value="6" />
+            </label>
+            <label>Founder contribution
+              <input id="calcFounder" type="number" min="0" value="10000" />
+            </label>
+            <label>Expected early revenue
+              <input id="calcRevenue" type="number" min="0" value="5000" />
+            </label>
+            <button class="secondary-button" id="calculateInvestment">Calculate funding need</button>
+            <div class="calc-result" id="investmentResult">AED 58,000 suggested funding need</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split" id="investors">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Investor connection feature</p>
+          <h2>Show the investor type and details before connecting.</h2>
+          <p>The platform separates verified investors and individual investors, shows required details, and requires the secure agreement before communication.</p>
+          <div class="filter-buttons" role="group" aria-label="Investor filter">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="Verified Investor">Verified</button>
+            <button class="filter-button" data-filter="Individual Investor">Individual</button>
+            <button class="filter-button" data-filter="Government-backed Funding Body">Government</button>
+          </div>
+        </div>
+        <div class="investor-list" id="investorList"></div>
+      </section>
+
+      <section class="section two-col" id="agreement">
+        <div class="panel agreement-panel">
+          <p class="eyebrow">Government-supported agreement form</p>
+          <h2>Secure connection before sensitive information is shared.</h2>
+          <p class="notice">Prototype note: this is a product flow example. A real government-linked agreement must be reviewed and approved by the relevant authority and legal counsel.</p>
+          <form class="grid-form compact" id="agreementForm">
+            <label>Founder legal name
+              <input name="agreementFounder" type="text" placeholder="Founder full name" />
+            </label>
+            <label>Investor legal name
+              <input name="agreementInvestor" type="text" placeholder="Investor full legal name or company" />
+            </label>
+            <label>Connection purpose
+              <select name="agreementPurpose">
+                <option>Investment discussion</option>
+                <option>Mentorship discussion</option>
+                <option>Partnership discussion</option>
+                <option>Customer pilot discussion</option>
+              </select>
+            </label>
+            <label>Date
+              <input name="agreementDate" type="date" />
+            </label>
+            <label class="checkbox-line full"><input type="checkbox" name="identity" /> Both parties confirm identity verification.</label>
+            <label class="checkbox-line full"><input type="checkbox" name="confidentiality" /> Both parties accept basic confidentiality terms.</label>
+            <label class="checkbox-line full"><input type="checkbox" name="antiFraud" /> Both parties accept the anti-fraud declaration.</label>
+            <label class="checkbox-line full"><input type="checkbox" name="noGuarantee" /> Both parties confirm no investment is guaranteed.</label>
+          </form>
+          <button class="primary-button" id="generateAgreement">Generate agreement preview</button>
+        </div>
+        <div class="panel output-panel">
+          <h3>Agreement preview</h3>
+          <div id="agreementPreview" class="agreement-preview">Select an investor or complete the form to generate the secure connection agreement.</div>
+        </div>
+      </section>
+
+      <section class="section two-col" id="secure-chat">
+        <div class="panel dark-panel">
+          <p class="eyebrow">Secure founder-investor chat</p>
+          <h2>Chat opens only after the agreement.</h2>
+          <p id="chatLockText">The secure chat is locked until the agreement preview is generated with all required confirmations.</p>
+        </div>
+        <div class="panel chat-panel locked" id="chatPanel">
+          <div class="chat-history" id="chatHistory">
+            <div class="chat-message system">Secure chat will appear here after completion.</div>
+          </div>
+          <div class="chat-controls">
+            <input id="chatInput" type="text" placeholder="Type a message after agreement approval" disabled />
+            <button class="secondary-button" id="sendChat" disabled>Send</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="documents">
+        <div class="section-heading">
+          <p class="eyebrow">Secure document room</p>
+          <h2>Founder controls what each investor can view.</h2>
+          <p>Upload documents in this front-end prototype. Files stay in the browser and are not sent anywhere.</p>
+        </div>
+        <div class="document-layout">
+          <div class="panel upload-panel">
+            <label class="upload-box">Upload business documents
+              <input id="documentUpload" type="file" multiple />
+              <span>Pitch deck, business plan, license documents, product photos, financial projections.</span>
+            </label>
+          </div>
+          <div class="panel">
+            <h3>Document list</h3>
+            <div id="documentList" class="document-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="verification">
+        <div class="section-heading">
+          <p class="eyebrow">Investor verification and rating</p>
+          <h2>Trust signals for first-time founders.</h2>
+        </div>
+        <div class="card-grid three">
+          <article class="feature-card"><span class="badge blue">Check 1</span><h3>Identity and registration</h3><p>Verifies legal name, company registration where applicable, jurisdiction, and official contact details.</p></article>
+          <article class="feature-card"><span class="badge green">Check 2</span><h3>Investment profile</h3><p>Shows preferred sectors, investment range, typical business stage, and whether the investor acts personally or for an entity.</p></article>
+          <article class="feature-card"><span class="badge dark">Check 3</span><h3>Safety feedback</h3><p>Captures founder feedback, suspicious behavior reports, and warning flags when verification is incomplete.</p></article>
+        </div>
+      </section>
+
+      <section class="section split" id="resources">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Government resource directory</p>
+          <h2>Official support paths in one place.</h2>
+          <p>Founders can discover business registration offices, licensing authorities, grants, incubators, accelerators, training, and legal support.</p>
+        </div>
+        <div class="resource-stack">
+          <article class="resource-card"><h3>Business registration</h3><p>Trade license guidance, company registration, activity selection, and office or workspace requirements.</p></article>
+          <article class="resource-card"><h3>Startup support programs</h3><p>Incubators, accelerators, mentorship, training, and market entry support.</p></article>
+          <article class="resource-card"><h3>Financial literacy and legal aid</h3><p>Budgeting, contracts, accounting, investment basics, equity education, and founder protection support.</p></article>
+        </div>
+      </section>
+
+      <section class="section light" id="funding">
+        <div class="section-heading">
+          <p class="eyebrow">Grant and funding opportunities</p>
+          <h2>Not every founder needs an investor.</h2>
+        </div>
+        <div class="card-grid three">
+          <article class="feature-card"><h3>Government grants</h3><p>For founders who need non-dilutive support and meet program criteria.</p></article>
+          <article class="feature-card"><h3>Startup competitions</h3><p>For founders who can pitch publicly and validate interest with judges or partners.</p></article>
+          <article class="feature-card"><h3>Strategic partnerships</h3><p>For founders who need customers, distribution, pilots, or expert access more than cash.</p></article>
+          <article class="feature-card"><h3>Angel investors</h3><p>For founders seeking early capital, advice, and network access.</p></article>
+          <article class="feature-card"><h3>Bank loans</h3><p>For businesses with repayment capacity and clear financial records.</p></article>
+          <article class="feature-card"><h3>Revenue-based financing</h3><p>For businesses that can repay from future revenue without giving fixed equity upfront.</p></article>
+        </div>
+      </section>
+
+      <section class="section split" id="education">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Founder education hub</p>
+          <h2>Short lessons for first-time founders.</h2>
+        </div>
+        <div class="lesson-list" id="lessonList"></div>
+      </section>
+
+      <section class="section two-col" id="risk">
+        <div class="panel dark-panel">
+          <p class="eyebrow">Risk and fraud protection</p>
+          <h2>Protect founders before money or documents move.</h2>
+          <p>No sensitive file sharing, money transfer, or final investment acceptance should happen before verification, agreement, and review.</p>
+        </div>
+        <div class="panel checklist-panel" id="riskChecklist">
+          <label><input type="checkbox" /> Investor identity has been verified.</label>
+          <label><input type="checkbox" /> Investor details match official documents.</label>
+          <label><input type="checkbox" /> Agreement form is completed.</label>
+          <label><input type="checkbox" /> No money is transferred outside the platform flow.</label>
+          <label><input type="checkbox" /> Founder understands equity, profit-share, or repayment terms.</label>
+          <label><input type="checkbox" /> Legal or business advisor review has been considered.</label>
+        </div>
+      </section>
+
+      <section class="section light" id="community-marketplace">
+        <div class="section-heading">
+          <p class="eyebrow">Community and marketplace</p>
+          <h2>Build around the founder, not only the idea.</h2>
+        </div>
+        <div class="community-layout">
+          <div class="panel">
+            <h3>Community support</h3>
+            <div class="pill-list">
+              <span>Founder groups</span><span>Local circles</span><span>Discussion rooms</span><span>Peer feedback</span><span>Collaboration</span><span>Success stories</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Verified service marketplace</h3>
+            <div class="pill-list">
+              <span>Legal consultants</span><span>Accountants</span><span>Branding experts</span><span>Website developers</span><span>Marketing agencies</span><span>Packaging suppliers</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split" id="meetings">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Meeting booking system</p>
+          <h2>Turn advice into calendar action.</h2>
+          <p>Book founder sessions with mentors, investors, government advisors, legal experts, accountants, business consultants, or potential customers.</p>
+        </div>
+        <div class="panel">
+          <div class="grid-form compact">
+            <label>Meeting type
+              <select id="meetingType">
+                <option>Investor meeting</option>
+                <option>Mentor session</option>
+                <option>Government advisor meeting</option>
+                <option>Legal consultation</option>
+                <option>Customer discovery call</option>
+                <option>Pitch presentation</option>
+              </select>
+            </label>
+            <label>Meeting date
+              <input id="meetingDate" type="date" />
+            </label>
+            <label class="full">Meeting notes
+              <textarea id="meetingNotes" rows="3" placeholder="What should be discussed?"></textarea>
+            </label>
+          </div>
+          <button class="primary-button" id="bookMeeting">Book meeting</button>
+          <div class="meeting-list" id="meetingList"></div>
+        </div>
+      </section>
+
+      <section class="section light" id="protection">
+        <div class="section-heading">
+          <p class="eyebrow">Founder protection checklist before accepting investment</p>
+          <h2>Make the final decision safely.</h2>
+        </div>
+        <div class="protection-grid">
+          <label><input type="checkbox" /> Has the investor been verified?</label>
+          <label><input type="checkbox" /> Do you understand the investor's offer?</label>
+          <label><input type="checkbox" /> Are you giving equity, profit share, or repayment?</label>
+          <label><input type="checkbox" /> Have you reviewed the agreement?</label>
+          <label><input type="checkbox" /> Do you understand the investor's rights?</label>
+          <label><input type="checkbox" /> Have both parties signed the secure agreement?</label>
+          <label><input type="checkbox" /> Have you received legal or business advice?</label>
+          <label><input type="checkbox" /> Are all terms written clearly?</label>
+        </div>
+      </section>
+
+      <section class="section final-section">
+        <div class="section-heading centered">
+          <p class="eyebrow">Desired outcome</p>
+          <h2>By the end, the founder knows the first action, required support, funding need, safe investor pathway, and launch steps.</h2>
+          <p>The best solution makes starting a business less confusing, less risky, and more achievable for a first-time founder.</p>
+          <a class="primary-button" href="#profile">Start the founder flow</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>FirstStep Founder Portal</strong>
+        <p>Prototype website for Challenge 1. Visual direction is inspired by Abu Dhabi tech ecosystem aesthetics and not affiliated with or endorsed by Hub71.</p>
+      </div>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
